@@ -5,8 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
 import steth from './Asset/Stethascope.png';
+
 const App = () => {
 	return (
 		<div className='App'>
@@ -42,7 +42,11 @@ const App = () => {
 						<p className='lead mb-4'>
 							Quickly find an avaliable walk-in clinic, With appointments or
 							current wait times
+							<p className='mb-4' style={{ color: 'red', marginTop: '-5px' }}>
+								For emergencies please contact your local emergency services
+							</p>
 						</p>
+
 						<div className='d-grid gap-2 d-sm-flex justify-content-sm-center mb-5'>
 							<button type='button' className='btn btn-success btn-lg px-4'>
 								Find Nearby Clinic
@@ -67,11 +71,49 @@ const App = () => {
 				<input
 					type='text'
 					class='form-control'
-					placeholder='Search your home address'
+					placeholder='Search your home address, or City center (CANADA, USA)'
 					aria-label='Search your home address'
 					aria-describedby='basic-addon2'
 					style={{ marginTop: '30px' }}
 				></input>
+			</Container>
+			<Container>
+				<div
+					style={{
+						borderStyle: 'solid',
+						borderWidth: '1px',
+						borderRadius: '3px',
+						margin: '1%',
+						minHeight: '10vh',
+						padding: '10px',
+					}}
+					className='d-flex align-items-start justify-content-around'
+				>
+					<div>Walkin Clinic, Joe Bob</div>
+					<div>
+						<div>Wait time for walk in</div>
+						<div>2 Hr</div>
+					</div>
+
+					<div>
+						<div>Appointments avaliable</div>
+						<div>10</div>
+					</div>
+
+					<div>
+						<div>Distance from you</div>
+						<div>100 KM</div>
+					</div>
+
+					<div>
+						<div>6129 River Rd, Port Alberni, BC</div>
+						<div>7789527551</div>
+					</div>
+				</div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
 			</Container>
 		</div>
 	);
