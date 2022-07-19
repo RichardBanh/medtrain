@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-medtrain-dev-210024-authRole",
+      "UnauthRoleArn": "arn:aws:iam::101779447473:role/amplify-medtrain-dev-210024-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::101779447473:role/amplify-medtrain-dev-210024-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-medtrain-dev-210024-deployment",
+      "UnauthRoleName": "amplify-medtrain-dev-210024-unauthRole",
+      "StackName": "amplify-medtrain-dev-210024",
+      "StackId": "arn:aws:cloudformation:us-east-2:101779447473:stack/amplify-medtrain-dev-210024/57b3d940-0717-11ed-a819-021a6f5f7574",
+      "AmplifyAppId": "d3rhpwtik25umz"
+    },
+    "categories": {
+      "auth": {
+        "medtrain5d2c6186": {}
+      }
+    }
+  }
+}
