@@ -13,10 +13,11 @@ const App = () => {
 		<div className='App'>
 			<BrowserRouter>
 				<Routes>
-					<Route path='/' element={<Main_page />} />
-					<Route path='index' element={<Landing_page />} />
-					<Route path='signin' element={<Sign_in />} />
-					<Route path='signup' element={<Sign_up />} />
+					<Route path='/' element={<Main_page />}>
+						<Route index element={<Landing_page />} />
+						<Route path='signin' element={<Sign_in />} />
+						<Route path='signup' element={<Sign_up />} />
+					</Route>
 				</Routes>
 			</BrowserRouter>
 		</div>

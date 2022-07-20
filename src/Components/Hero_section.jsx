@@ -1,3 +1,5 @@
+import steth from '../Asset/Stethascope.png';
+
 const Hero_section = () => {
 	return (
 		<div
