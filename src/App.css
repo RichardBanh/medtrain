@@ -36,6 +36,7 @@
 .input_form {
 	width: 30%;
 }
+
 @media screen and (min-width: 400px) {
 	.text_size {
 		font-size: 9px;
