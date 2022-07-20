@@ -1,18 +1,26 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import steth from './Asset/Stethascope.png';
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Sign_in from './Pages/Sign_in';
+import Sign_up from './Pages/Sign_up';
+import Main_page from './Pages/Main_page';
+import Landing_page from './Pages/Landing_page';
 
 const App = () => {
-	const [show_red, set_red] = useState(false);
-
-	//start refresh
-	return <div className='App'></div>;
+	return (
+		<div className='App'>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<Main_page />} />
+					<Route path='index' element={<Landing_page />} />
+					<Route path='signin' element={<Sign_in />} />
+					<Route path='signup' element={<Sign_up />} />
+				</Routes>
+			</BrowserRouter>
+		</div>
+	);
 };
 
 export default App;

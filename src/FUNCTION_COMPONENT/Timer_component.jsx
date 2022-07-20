@@ -5,6 +5,7 @@ const Timer_component = (props) => {
 
 	let timer = {};
 	useEffect(() => {
+		//need to add bool here
 		start_timer(false, 0);
 	}, []);
 

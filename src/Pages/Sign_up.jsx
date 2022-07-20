@@ -1,5 +1,4 @@
 const Sign_up = () => {
-    
 	return (
 		<main class='form-signin'>
 			<form>
