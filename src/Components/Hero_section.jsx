@@ -21,7 +21,6 @@ const Hero_section = () => {
 							For emergencies please contact your local emergency services
 						</p>
 					</p>
-
 					<div className='d-grid gap-2 d-sm-flex justify-content-sm-center mb-5'>
 						<button type='button' className='btn btn-success btn-lg px-4'>
 							Find Nearby Clinic
@@ -33,9 +32,6 @@ const Hero_section = () => {
 							Sign Up Your Clinic
 						</button>
 					</div>
-				</div>
-				<div className='overflow-hidden'>
-					<div className='container px-5'></div>
 				</div>
 			</div>
 		</div>

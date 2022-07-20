@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 
 const Search = () => {
 	return (
-		<Container>
+		<Container id='search'>
 			<h1 className='display-4 fw-bold' style={{ marginTop: '20px' }}>
 				Find Nearest Clinics
 			</h1>

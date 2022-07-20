@@ -13,23 +13,15 @@ const Clinic_data_entry = () => {
 			}}
 		>
 			<Container>
-				<h1 className='display-4 fw-bold' style={{ paddingTop: '50px' }}>
-					Update wait time/ Appointment Time
-				</h1>
-				<div
-					className='d-flex justify-content-around'
-					style={{ width: '100%', marginTop: '80px' }}
-				>
-					<div
-						className='d-flex align-items-start flex-column'
-						style={{ width: '30%' }}
-					>
+				<h1 className='display-4 fw-bold'>Update wait time/ Appointments</h1>
+				<div className='d-flex input_block' style={{ marginTop: '80px' }}>
+					<div className='d-flex align-items-start flex-column input_form'>
 						<div>Current Wait Time:</div>
-						<div>1 Hr</div>
+						<div style={{ marginTop: '20px' }}>1 Hr</div>
 						<div>Wait time:</div>
 						<input
 							type='text'
-							class='form-control'
+							className='form-control'
 							placeholder='Wait time in seconds'
 							aria-label='Set wait time'
 						></input>
@@ -41,15 +33,13 @@ const Clinic_data_entry = () => {
 							Update
 						</button>
 						<div className='d-flex' style={{ marginTop: '20px' }}>
-							<div>Time Since Last Update:</div> <div> 40min</div>
+							<div style={{ textAlign: 'start' }}>Time Since Last Update:</div>
+							<div>40min</div>
 						</div>
 					</div>
-					<div
-						className='d-flex align-items-start flex-column'
-						style={{ width: '30%' }}
-					>
-						<div>Current Appointments Avaliable:</div>
-						<div>12</div>
+					<div className='d-flex align-items-start flex-column input_form'>
+						<div style={{ textAlign: 'start' }}>Current Appointment:</div>
+						<div style={{ marginTop: '20px' }}>12</div>
 						<div>Appointment avaliable:</div>
 						<input
 							type='text'
@@ -65,7 +55,8 @@ const Clinic_data_entry = () => {
 							Update
 						</button>
 						<div className='d-flex' style={{ marginTop: '20px' }}>
-							<div>Time Since Last Update:</div> <div> 40min</div>
+							<div style={{ textAlign: 'start' }}>Time Since Last Update:</div>
+							<div> 40min</div>
 						</div>
 					</div>
 				</div>
