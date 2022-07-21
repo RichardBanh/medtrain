@@ -7,8 +7,8 @@ const Clinic_data_entry = () => {
 			className='px-4 pt-5 d-flex align-items-center justify-content-center'
 			style={{
 				backgroundImage: `url(${steth})`,
-				minHeight: '60vh',
-				backgroundSize: '1650px 584px',
+				minHeight: '65vh',
+				backgroundSize: '1650px 704px',
 				backgroundRepeat: 'none',
 			}}
 		>
