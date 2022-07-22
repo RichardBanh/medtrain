@@ -16,11 +16,12 @@ const Single_clinic = () => {
 				style={{
 					borderStyle: 'solid',
 					borderWidth: '1px',
-					borderRadius: '3px',
 					margin: '1%',
 					minHeight: '10vh',
 					padding: '10px',
 					marginBottom: '50px',
+					borderLeftStyle: 'none',
+					borderRightStyle: 'none',
 				}}
 				className='d-flex align-items-center justify-content-center flex-column'
 			>
