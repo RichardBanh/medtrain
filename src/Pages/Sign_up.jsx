@@ -1,5 +1,5 @@
 import { Container, Form } from 'react-bootstrap';
-import Check_email from '../Components/Check_email';
+
 import Success_page from '../Components/Success_page';
 const Sign_up = () => {
 	return (
