@@ -1,10 +1,8 @@
-import { Container, Form } from 'react-bootstrap';
-import Check_email from '../Components/Check_email';
-import Success_page from '../Components/Success_page';
-const Sign_up = () => {
+import { Container } from 'react-bootstrap';
+
+const Change_open_time = (props) => {
 	return (
-		<>
-			{/* <Check_email /> */}
+		<Container>
 			<Container
 				className='d-flex justify-content-center align-items-center'
 				style={{ height: '130vh' }}
@@ -13,56 +11,10 @@ const Sign_up = () => {
 					style={{ width: '60%', height: '100%' }}
 					className='d-flex justify-content-around align-items-center flex-column'
 				>
-					<h1 className='h3 mb-3 fw-normal my-5'>Sign Up Here!</h1>
 					<form
 						style={{ width: '100%', height: '100%' }}
 						className='d-flex justify-content-evenly flex-column align-items-center'
 					>
-						<div className='form-floating' style={{ width: '70%' }}>
-							<input type='text' className='form-control' placeholder='Dr Oz' />
-							<label for='floatingInput'>Clinic Name</label>
-						</div>
-						<div className='form-floating' style={{ width: '70%' }}>
-							<input
-								type='email'
-								className='form-control'
-								id='floatingInput'
-								placeholder='name@example.com'
-							/>
-							<label for='floatingInput'>Email address</label>
-						</div>
-
-						<div className='form-floating' style={{ width: '70%' }}>
-							<input
-								type='email'
-								className='form-control'
-								id='floatingInput'
-								placeholder='name@example.com'
-							/>
-							<label for='floatingInput'>Phone number</label>
-						</div>
-						<div className='form-floating' style={{ width: '70%' }}>
-							<input type='text' className='form-control' placeholder='City' />
-							<label for='floatingPassword'>City</label>
-						</div>
-						<div className='form-floating' style={{ width: '70%' }}>
-							<input
-								type='password'
-								className='form-control'
-								id='floatingPassword'
-								placeholder='Password'
-							/>
-							<label for='floatingPassword'>Password</label>
-						</div>
-						<div className='form-floating' style={{ width: '70%' }}>
-							<input
-								type='password'
-								className='form-control'
-								id='floatingPassword'
-								placeholder='Password'
-							/>
-							<label for='floatingPassword'>Enter Password Again</label>
-						</div>
 						{/* start */}
 						<div
 							className='d-flex align-items-start align-items-center'
@@ -917,9 +869,8 @@ const Sign_up = () => {
 					</form>
 				</main>
 			</Container>
-			<Success_page />
-		</>
+		</Container>
 	);
 };
 
-export default Sign_up;
+export default Change_open_time;
