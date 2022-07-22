@@ -14,14 +14,13 @@ const Search = () => {
 				Find Nearest Clinics
 			</h1>
 			<div
-				className='d-flex flex-row align-items-center justify-content-center mt-5 mb-3'
+				className='d-flex flex-row align-items-center justify-content-evenly mt-5 mb-3'
 				style={{ width: '100%' }}
 			>
 				<Form.Select
 					aria-label='Default select example'
 					style={{
 						width: '40%',
-						marginLeft: '60px',
 						border: city === '1' ? '2px solid black' : '1px solid grey',
 					}}
 					onChange={(e) => {
@@ -38,7 +37,7 @@ const Search = () => {
 				</Form.Select>
 				<div
 					className='d-flex flex-row align-items-center '
-					style={{ width: '50%' }}
+					style={{ width: '40%' }}
 				>
 					<div
 						style={{
