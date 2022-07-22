@@ -1,6 +1,6 @@
-import steth from '../Asset/Stethascope.png';
 import { Link } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+
 const Footer = () => {
 	return (
 		<div
@@ -10,6 +10,9 @@ const Footer = () => {
 			}}
 		>
 			<Container className='pt-2 d-flex align-items-start justify-content-start'>
+				<Link to='/' className='nav-link' style={{ color: 'white' }}>
+					MedTrain
+				</Link>
 				<Link to='/terms' className='nav-link' style={{ color: 'white' }}>
 					Terms and Conditions
 				</Link>

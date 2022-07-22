@@ -1,7 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import Icon from '../Asset/search.svg';
 import { Button, Dropdown, Form } from 'react-bootstrap';
+import { useState } from 'react';
 const Search = () => {
+	const [city, set_city] = useState('1');
+	const city_select = (e) => {
+		console.log(e.target.value);
+		set_city(e.target.value);
+	};
 	return (
 		<Container id='search' className='d-flex flex-column align-items-center'>
 			<h1 className='display-4 fw-bold' style={{ marginTop: '20px' }}>
@@ -14,19 +20,28 @@ const Search = () => {
 				<Form.Select
 					aria-label='Default select example'
 					style={{ width: '40%', marginLeft: '60px' }}
+					onChange={(e) => {
+						city_select(e);
+					}}
 				>
-					<option style={{ fontWeight: 'bold' }}>Select your city</option>
-					<option value='1'>Vancouver</option>
-					<option value='2'>Montreal</option>
-					<option value='3'>Toronto</option>
-					<option value='4'>Seattle</option>
+					<option style={{ fontWeight: 'bold' }} value='1'>
+						Select your city
+					</option>
+					<option value='2'>Vancouver</option>
+					<option value='3'>Montreal</option>
+					<option value='4'>Toronto</option>
+					<option value='5'>Seattle</option>
 				</Form.Select>
 				<div
 					className='d-flex flex-row align-items-center '
 					style={{ width: '50%' }}
 				>
 					<div
-						style={{ border: '1px solid #DDD', width: '80%' }}
+						style={{
+							border: '1px solid #DDD',
+							width: '80%',
+							backgroundColor: city === '1' ? 'rgb(234,236,239)' : '',
+						}}
 						className='d-flex align-items-center '
 					>
 						<img src={Icon} style={{ marginLeft: '20px' }} />
@@ -37,6 +52,7 @@ const Search = () => {
 							aria-label='Search your home address'
 							aria-describedby='basic-addon2'
 							style={{ border: 'none' }}
+							disabled={city === '1' ? true : false}
 						/>
 					</div>
 					<Button>Search</Button>
