@@ -19,7 +19,11 @@ const Search = () => {
 			>
 				<Form.Select
 					aria-label='Default select example'
-					style={{ width: '40%', marginLeft: '60px' }}
+					style={{
+						width: '40%',
+						marginLeft: '60px',
+						border: city === '1' ? '2px solid black' : '1px solid grey',
+					}}
 					onChange={(e) => {
 						city_select(e);
 					}}
@@ -38,9 +42,10 @@ const Search = () => {
 				>
 					<div
 						style={{
-							border: '1px solid #DDD',
+							border: city != '1' ? '2px solid black' : '1px solid #DDD',
 							width: '80%',
 							backgroundColor: city === '1' ? 'rgb(234,236,239)' : '',
+							borderRadius: '4px',
 						}}
 						className='d-flex align-items-center '
 					>
@@ -55,7 +60,7 @@ const Search = () => {
 							disabled={city === '1' ? true : false}
 						/>
 					</div>
-					<Button>Search</Button>
+					<Button disabled={city === '1' ? true : false}>Search</Button>
 				</div>
 			</div>
 		</Container>
