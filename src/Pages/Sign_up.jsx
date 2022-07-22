@@ -4,7 +4,6 @@ import Success_page from '../Components/Success_page';
 const Sign_up = () => {
 	return (
 		<>
-			{/* <Check_email /> */}
 			<Container
 				className='d-flex justify-content-center align-items-center'
 				style={{ height: '130vh' }}
