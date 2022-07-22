@@ -9,6 +9,8 @@ import Main_page from './Pages/Main_page';
 import Landing_page from './Pages/Landing_page';
 import Clinic_section from './Pages/Clinic_section';
 
+import Privacy from './Pages/Privacy';
+import Terms from './Pages/Terms';
 const App = () => {
 	return (
 		<div className='App'>
@@ -19,6 +21,8 @@ const App = () => {
 						<Route path='signin' element={<Sign_in />} />
 						<Route path='signup' element={<Sign_up />} />
 						<Route path='search' element={<Clinic_section />} />
+						<Route path='privacy' element={<Privacy />} />
+						<Route path='terms' element={<Terms />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>
