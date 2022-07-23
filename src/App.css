@@ -93,6 +93,9 @@
 		margin-left: 2px;
 		height: 14px;
 	}
+	.form_size {
+		width: 100%;
+	}
 }
 
 @media screen and (min-width: 700px) {
@@ -109,6 +112,9 @@
 	.down_arrow {
 		margin-left: 2px;
 		height: 9px;
+	}
+	.form_size {
+		width: 100%;
 	}
 }
 @media screen and (max-width: 750px) {
@@ -141,6 +147,9 @@
 		margin-left: 2px;
 		height: 10px;
 	}
+	.form_size {
+		width: 100%;
+	}
 }
 
 @media screen and (min-width: 800px) {
@@ -165,11 +174,13 @@
 		margin-left: 2px;
 		height: 10px;
 	}
+	.form_size {
+		width: 60%;
+	}
 }
 
 .color_green {
 	color: green;
-	
 }
 
 .link {
