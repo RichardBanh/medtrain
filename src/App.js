@@ -13,6 +13,8 @@ import Privacy from './Pages/Privacy';
 import Terms from './Pages/Terms';
 
 import Settings from './Pages/Settings';
+import Change_password from './Pages/Change_password';
+import Delete_account from './Pages/Delete_account';
 
 const App = () => {
 	return (
@@ -27,6 +29,8 @@ const App = () => {
 						<Route path='privacy' element={<Privacy />} />
 						<Route path='terms' element={<Terms />} />
 						<Route path='settings' element={<Settings />} />
+						<Route path='password' element={<Change_password />} />
+						<Route path='delete' element={<Delete_account />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>
