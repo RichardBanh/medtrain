@@ -17,7 +17,7 @@ const Navibar = () => {
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='me-auto'>
 						<div
-							className='nav-link'
+							className='nav-link nav-link-custom-hover'
 							onClick={() => {
 								navigate('/search', {
 									replace: false,
