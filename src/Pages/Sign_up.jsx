@@ -7,6 +7,15 @@ const Sign_up = () => {
 	const [submit_success, set_success] = useState(false);
 	const [processing, set_processing] = useState(false);
 
+	const [error_message, set_error_message] = useState('');
+
+	const show_error = (message) => {
+		set_error_message(message);
+		setTimeout(() => {
+			set_error_message('');
+		}, 3000);
+	};
+
 	const [date_time, set_date_time] = useState({
 		mon: {
 			open: true,
@@ -83,9 +92,7 @@ const Sign_up = () => {
 	const password_comparison = (password1, password2) => {
 		//must have special characters and 1 number and length of 6
 		//password1 and password 2 must match
-
 	};
-
 
 	return (
 		<>
@@ -101,12 +108,15 @@ const Sign_up = () => {
 					<form
 						style={{ width: '100%', height: '100%' }}
 						className='d-flex justify-content-evenly flex-column align-items-center'
+						onSubmit={() => {
+							handle_submit();
+						}}
 					>
 						<div className='form-floating' style={{ width: '70%' }}>
 							<input
 								type='text'
 								className='form-control'
-								placeholder='Dr Oz'
+								required
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
@@ -128,6 +138,7 @@ const Sign_up = () => {
 										clinic_name: e.target.value,
 									});
 								}}
+								required
 							/>
 							<label for='floatingInput'>Email address</label>
 						</div>
@@ -138,6 +149,7 @@ const Sign_up = () => {
 								className='form-control'
 								id='floatingInput'
 								placeholder='+7789527551'
+								required
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
@@ -152,6 +164,7 @@ const Sign_up = () => {
 								type='text'
 								className='form-control'
 								placeholder='City'
+								required
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
@@ -167,6 +180,7 @@ const Sign_up = () => {
 								className='form-control'
 								id='floatingPassword'
 								placeholder='Password'
+								required
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
@@ -182,6 +196,7 @@ const Sign_up = () => {
 								className='form-control'
 								id='floatingPassword'
 								placeholder='Password'
+								required
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
@@ -1796,15 +1811,10 @@ const Sign_up = () => {
 								</label>
 							</div>
 						</div>
-						{/* //end */}
-
 						<button
 							className='btn btn-lg btn-primary'
 							type='submit'
 							style={{ width: '60%' }}
-							onClick={() => {
-								handle_submit();
-							}}
 						>
 							{processing ? <Spinner animation='border' /> : <>Sign up</>}
 						</button>
