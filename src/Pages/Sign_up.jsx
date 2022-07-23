@@ -230,7 +230,7 @@ const Sign_up = () => {
 										<Form.Select
 											aria-label='Default select example'
 											style={{ width: '30%' }}
-											onChange={(e) => {}}
+											disabled={!date_time.mon.open}
 										>
 											<option style={{ fontWeight: 'bold' }}>Hour</option>
 											<option value='0'>0</option>
@@ -261,6 +261,7 @@ const Sign_up = () => {
 										<Form.Select
 											aria-label='Default select example'
 											style={{ width: '30%' }}
+											disabled={!date_time.mon.open}
 										>
 											<option style={{ fontWeight: 'bold' }}>Minutes</option>
 											<option value='00'>00</option>
@@ -331,6 +332,7 @@ const Sign_up = () => {
 											aria-label='Default select example'
 											style={{ width: '30%' }}
 											onChange={(e) => {}}
+											disabled={!date_time.mon.open}
 										>
 											<option style={{ fontWeight: 'bold' }}>Hour</option>
 											<option value='0'>0</option>
@@ -361,6 +363,7 @@ const Sign_up = () => {
 										<Form.Select
 											aria-label='Default select example'
 											style={{ width: '30%' }}
+											disabled={!date_time.mon.open}
 										>
 											<option style={{ fontWeight: 'bold' }}>Minutes</option>
 											<option value='00'>00</option>
@@ -452,14 +455,17 @@ const Sign_up = () => {
 								className='d-flex flex-column align-items-start'
 								style={{ width: '100%' }}
 							>
+								{/* ///Tuesday */}
 								<label style={{ marginBottom: '5px', marginTop: '10px' }}>
 									Tuesday
 								</label>
 								<div style={{ paddingLeft: '10px' }}>Open time</div>
 								<div className='d-flex' style={{ width: '100%' }}>
+									{/* have set disabled  */}
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.tues.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -490,6 +496,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.tues.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -559,6 +566,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.tues.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -589,6 +597,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.tues.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -663,7 +672,7 @@ const Sign_up = () => {
 										onChange={() => {
 											set_date_time({
 												...date_time,
-												thur: { ...date_time.tues, open: !date_time.tues.open },
+												tues: { ...date_time.tues, open: !date_time.tues.open },
 											});
 										}}
 									/>
@@ -687,6 +696,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.wed.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -717,6 +727,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.wed.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -786,6 +797,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.wed.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -816,6 +828,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.wed.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -915,6 +928,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.thur.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -945,6 +959,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.thur.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -1014,6 +1029,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.thur.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -1044,6 +1060,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.thur.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -1144,6 +1161,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.fri.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -1174,6 +1192,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.fri.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -1243,6 +1262,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.fri.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -1273,6 +1293,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.fri.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -1373,6 +1394,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sat.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -1403,6 +1425,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sat.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -1472,6 +1495,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sat.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -1502,6 +1526,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sat.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -1602,6 +1627,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sun.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -1632,6 +1658,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sun.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
@@ -1701,6 +1728,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sun.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Hour</option>
 										<option value='0'>0</option>
@@ -1731,6 +1759,7 @@ const Sign_up = () => {
 									<Form.Select
 										aria-label='Default select example'
 										style={{ width: '30%' }}
+										disabled={!date_time.sun.open}
 									>
 										<option style={{ fontWeight: 'bold' }}>Minutes</option>
 										<option value='00'>00</option>
