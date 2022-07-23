@@ -116,15 +116,17 @@ const Sign_up = () => {
 							<input
 								type='text'
 								className='form-control'
-								required
+								id='floatingInput'
+								placeholder='Clinic Name'
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
 										clinic_name: e.target.value,
 									});
 								}}
+								required
 							/>
-							<label for='floatingInput'>Clinic Name</label>
+							<label for='floatingInput'>Clinic</label>
 						</div>
 						<div className='form-floating' style={{ width: '70%' }}>
 							<input
@@ -135,7 +137,7 @@ const Sign_up = () => {
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
-										clinic_name: e.target.value,
+										email_address: e.target.value,
 									});
 								}}
 								required
