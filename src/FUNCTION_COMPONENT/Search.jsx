@@ -1,15 +1,20 @@
 import Container from 'react-bootstrap/Container';
 import Icon from '../Asset/search.svg';
 import { Button, Dropdown, Form } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 const Search = () => {
 	const [city, set_city] = useState('1');
+	
 	const city_select = (e) => {
-		console.log(e.target.value);
 		set_city(e.target.value);
 	};
+
 	return (
-		<Container id='search' className='d-flex flex-column align-items-center'>
+		<Container
+			id='search'
+			className={'d-flex flex-column align-items-center justify-content-center'}
+		>
 			<h1 className='display-4 fw-bold' style={{ marginTop: '20px' }}>
 				Find Nearest Clinics
 			</h1>

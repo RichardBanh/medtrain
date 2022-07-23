@@ -46,8 +46,25 @@
 	margin-left: 2px;
 	width: 14px;
 }
+.clinicsection {
+	max-height: 90vh;
+	min-height: 50vh;
+}
 
-@media screen and (min-width: 400px) {
+.dedicated_clinic_section {
+	max-height: 90vh;
+	min-height: 90vh;
+}
+
+.clinicsection_overflow_scroll {
+	overflow: scroll;
+	max-height: 50%;
+	margin-top: 80px;
+	border: 0px solid black;
+	border-radius: 0px;
+	margin: 0px;
+}
+@media screen and (max-width: 400px) {
 	.text_size {
 		font-size: 9px;
 		text-align: start;
@@ -98,7 +115,7 @@
 	}
 }
 
-@media screen and (min-width: 700px) {
+/* @media screen and (min-width: 700px) {
 	.text_size {
 		font-size: 13px;
 		text-align: start;
@@ -116,7 +133,7 @@
 	.form_size {
 		width: 100%;
 	}
-}
+} */
 @media screen and (max-width: 750px) {
 	.input_block {
 		flex-direction: column;

@@ -2,8 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 const Navibar = () => {
+	const navigate = useNavigate();
+
 	return (
 		<Navbar bg='light' expand='lg'>
 			<Container>
@@ -13,9 +16,17 @@ const Navibar = () => {
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='me-auto'>
-						<Link to='/search' className='nav-link'>
+						<div
+							className='nav-link'
+							onClick={() => {
+								navigate('/search', {
+									replace: false,
+									state: { dedicated_page: true },
+								});
+							}}
+						>
 							Search for Clinic
-						</Link>
+						</div>
 						<Link to='/signup' className='nav-link'>
 							Sign up
 						</Link>
