@@ -1,6 +1,7 @@
 import steth from '../Asset/Stethascope.png';
-
+import { useNavigate } from 'react-router-dom';
 const Hero_section = () => {
+	const navigate = useNavigate();
 	return (
 		<div
 			className='px-4 pt-5 d-flex align-items-center justify-content-center'
@@ -22,12 +23,21 @@ const Hero_section = () => {
 						</p>
 					</p>
 					<div className='d-grid gap-2 d-sm-flex justify-content-sm-center mb-5'>
-						<button type='button' className='btn btn-success btn-lg px-4'>
+						<button
+							type='button'
+							className='btn btn-success btn-lg px-4'
+							onClick={() => {
+								navigate('/search');
+							}}
+						>
 							Find Nearby Clinic
 						</button>
 						<button
 							type='button'
 							className='btn btn-primary btn-lg px-4 me-sm-3'
+							onClick={() => {
+								navigate('/signup');
+							}}
 						>
 							Sign Up Your Clinic
 						</button>

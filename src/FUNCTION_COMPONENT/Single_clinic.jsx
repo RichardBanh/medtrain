@@ -29,19 +29,33 @@ const Single_clinic = () => {
 					className='d-flex align-items-start justify-content-around'
 					style={{ width: '100%', height: '100%' }}
 				>
-					<p className='text_size'>Walkin Clinic, Joe Bob</p>
+					<div className='d-flex align-items-start flex-column'>
+						<p className='text_size'>Walkin Clinic, Joe Bob</p>
+						<div className='d-flex flex-column'>
+							<p className='text_size_update'>Last updated:</p>
+							<p className='text_size_update' style={{ marginTop: '-15px' }}>
+								45min
+							</p>
+						</div>
+					</div>
 					<div>
 						<p className='text_size'>Wait time</p>
-						<p className='text_size color_green'>2 Hr</p>
+						<p className='text_size color_green' style={{ fontWeight: 'bold' }}>
+							2 Hr
+						</p>
 					</div>
 					<div>
 						<p className='text_size'>Appointments avaliable</p>
-						<p className='text_size color_green'>10</p>
+						<p className='text_size color_green' style={{ fontWeight: 'bold' }}>
+							10
+						</p>
 					</div>
 
 					<div>
 						<p className='text_size'>Distance from you</p>
-						<p className='text_size color_green'>100 KM</p>
+						<p className='text_size color_green' style={{ fontWeight: 'bold' }}>
+							100 KM
+						</p>
 					</div>
 
 					<div className='d-flex flex-column'>
@@ -64,10 +78,15 @@ const Single_clinic = () => {
 							}`}
 							target='_blank'
 							rel='noreferrer'
+							style={{ textAlign: 'end' }}
 						>
 							6129 River Rd, Port Alberni, BC
 						</a>
-						<a className='text_size link' href={`tel:+${7789527551}`}>
+						<a
+							className='text_size link'
+							href={`tel:+${7789527551}`}
+							style={{ textAlign: 'end' }}
+						>
 							7789527551
 						</a>
 					</div>
@@ -78,7 +97,8 @@ const Single_clinic = () => {
 						handle_expand();
 					}}
 				>
-					Hours
+					<div className='text_size'>Hours</div>
+
 					{expand_bool ? (
 						<>
 							<img className='up_arrow' src={up} />
@@ -89,6 +109,26 @@ const Single_clinic = () => {
 						</>
 					)}
 				</div>
+				{expand_bool ? (
+					<div
+						className='d-flex align-items-center flex-column'
+						style={{
+							marginTop: '10px',
+							backgroundColor: 'rgba(196,217,225,0.2)',
+							width: '102%',
+						}}
+					>
+						<div className='text_size times'>Monday: 1:30pm - 2:30am</div>
+						<div className='text_size times'>Monday: 1:30pm - 2:30am</div>
+						<div className='text_size times'>Monday: 1:30pm - 2:30am</div>
+						<div className='text_size times'>Monday: 1:30pm - 2:30am</div>
+						<div className='text_size times'>Monday: 1:30pm - 2:30am</div>
+						<div className='text_size times'>Monday: 1:30pm - 2:30am</div>
+						<div className='text_size times'>Monday: 1:30pm - 2:30am</div>
+					</div>
+				) : (
+					<></>
+				)}
 			</div>
 		</Container>
 	);
