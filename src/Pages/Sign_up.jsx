@@ -74,8 +74,18 @@ const Sign_up = () => {
 
 		// //evaluate empty
 		// //evaluate password
+
+		// check if closed
+		// if closed do not send hours
 		set_success(true);
 	};
+
+	const password_comparison = (password1, password2) => {
+		//must have special characters and 1 number and length of 6
+		//password1 and password 2 must match
+
+	};
+
 
 	return (
 		<>
