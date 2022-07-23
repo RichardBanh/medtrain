@@ -11,6 +11,9 @@ import Clinic_section from './Pages/Clinic_section';
 
 import Privacy from './Pages/Privacy';
 import Terms from './Pages/Terms';
+
+import Settings from './Pages/Settings';
+
 const App = () => {
 	return (
 		<div className='App'>
@@ -23,6 +26,7 @@ const App = () => {
 						<Route path='search' element={<Clinic_section />} />
 						<Route path='privacy' element={<Privacy />} />
 						<Route path='terms' element={<Terms />} />
+						<Route path='settings' element={<Settings />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>

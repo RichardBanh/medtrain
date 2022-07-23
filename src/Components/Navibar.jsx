@@ -22,6 +22,9 @@ const Navibar = () => {
 						<Link to='/signin' className='nav-link'>
 							Sign in
 						</Link>
+						<Link to='/settings' className='nav-link'>
+							Settings
+						</Link>
 						<NavDropdown title='Legalise' id='basic-nav-dropdown'>
 							<Nav.Link>Terms and Conditions</Nav.Link>
 							<Nav.Link>Privacy</Nav.Link>
