@@ -1,11 +1,19 @@
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { login_redirect } from '../Amplify_Account_FUNCTIONS/Login_redirect';
 const Change_password = () => {
 	const [password1, set_password1] = useState('');
 
 	const [password2, set_password2] = useState('');
-	const submit_password_change = () => {};
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		login_redirect(navigate);
+	}, []);
+
 	return (
 		<Container>
 			<div className='form-floating' style={{ width: '70%' }}>
