@@ -1,12 +1,11 @@
 import { API } from 'aws-amplify';
 
 export const upload_data = async (data) => {
-	const apiName = 'MyApiName';
-	const path = '/path';
+	const apiName = 'uploaddata';
+	const path = '/upload_data';
 	const myInit = {
 		body: { ...data },
 	};
-
 	return await API.post(apiName, path, myInit);
 };
 
@@ -19,7 +18,6 @@ export const update_times = async (data_obj) => {
 			wait: data_obj.wait,
 		},
 	};
-
 	return await API.post(api_name, path, myinit);
 };
 
@@ -32,6 +30,5 @@ export const update_appointment = async (data_obj) => {
 			appointment: data_obj.appointment,
 		},
 	};
-
 	return await API.post(api_name, path, myinit);
 };

@@ -24,7 +24,7 @@ const Navibar = () => {
 		<Navbar bg='light' expand='lg'>
 			<Container>
 				<Link to='/' className='nav-link'>
-					<Navbar.Brand>MedTrain</Navbar.Brand>
+					<Navbar.Brand style={{ fontWeight: 'bold' }}>MedTrain</Navbar.Brand>
 				</Link>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
