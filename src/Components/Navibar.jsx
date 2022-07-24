@@ -8,10 +8,9 @@ import { current_user } from '../Amplify_Account_FUNCTIONS/current_account';
 const Navibar = () => {
 	const navigate = useNavigate();
 	const [is_authenticated, set_authenticated] = useState(false);
-	const current_user_login = current_user();
 
 	const user_loggedin = async () => {
-		const user = await current_user_login();
+		const user = await current_user();
 		if (user.success) {
 			set_authenticated(true);
 		}
