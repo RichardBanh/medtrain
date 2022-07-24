@@ -10,6 +10,3 @@ export const submit_user_info = async (data_obj) => {
 	};
 	return await API.post(api_name, path, myinit);
 };
-
-//times
-//addresses
