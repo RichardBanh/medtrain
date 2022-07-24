@@ -5,12 +5,7 @@ import { useEffect } from 'react';
 
 const Clinic_section = () => {
 	const data = useLocation();
-
-	useEffect(() => {
-		console.log(data);
-	}, []);
-	//data.state===null
-	// 'd-flex flex-column justify-content-center'
+	useEffect(() => {}, []);
 	return (
 		<div
 			className={

@@ -3,9 +3,23 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { useEffect, useState } from 'react';
+import { current_user } from '../Amplify_Account_FUNCTIONS/current_account';
 const Navibar = () => {
 	const navigate = useNavigate();
+	const [is_authenticated, set_authenticated] = useState(false);
+	const current_user_login = current_user();
+
+	const user_loggedin = async () => {
+		const user = await current_user_login();
+		if (user.success) {
+			set_authenticated(true);
+		}
+	};
+
+	useEffect(() => {
+		user_loggedin();
+	}, []);
 
 	return (
 		<Navbar bg='light' expand='lg'>
@@ -33,9 +47,13 @@ const Navibar = () => {
 						<Link to='/signin' className='nav-link'>
 							Sign in
 						</Link>
-						<Link to='/settings' className='nav-link'>
-							Settings
-						</Link>
+						{is_authenticated ? (
+							<Link to='/settings' className='nav-link'>
+								Settings
+							</Link>
+						) : (
+							<></>
+						)}
 						<NavDropdown title='Legalise' id='basic-nav-dropdown'>
 							<Nav.Link>Terms and Conditions</Nav.Link>
 							<Nav.Link>Privacy</Nav.Link>

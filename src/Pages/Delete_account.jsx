@@ -1,5 +1,7 @@
 import { Container, Button } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { login_redirect } from '../Amplify_Account_FUNCTIONS/Login_redirect';
 
 const Delete_account = () => {
 	const [email, set_email] = useState('');
@@ -8,6 +10,12 @@ const Delete_account = () => {
 	const submit_delete = () => {
 		//api call email and password
 	};
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		login_redirect(navigate);
+	}, []);
 
 	return (
 		<Container
