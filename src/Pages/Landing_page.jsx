@@ -1,8 +1,9 @@
 import Hero_section from '../Components/Hero_section';
 import Clinic_data_entry from '../FUNCTION_COMPONENT/Clinic_data_entry';
 import Clinic_section from './Clinic_section';
-import { current_user } from '../Amplify_Account_FUNCTIONS/current_user';
-import { useEffect } from 'react';
+import { current_user } from '../Amplify_Account_FUNCTIONS/current_account';
+import { useEffect, useState } from 'react';
+
 const Landing_page = () => {
 	const [is_authenticated, set_authenticated] = useState(false);
 
@@ -16,6 +17,7 @@ const Landing_page = () => {
 	useEffect(() => {
 		user_loggedin();
 	}, []);
+
 	return (
 		<>
 			<Hero_section />

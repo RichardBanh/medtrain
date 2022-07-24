@@ -54,8 +54,12 @@ const Navibar = () => {
 							<></>
 						)}
 						<NavDropdown title='Legalise' id='basic-nav-dropdown'>
-							<Nav.Link>Terms and Conditions</Nav.Link>
-							<Nav.Link>Privacy</Nav.Link>
+							<Link to='/terms' className='nav-link'>
+								Terms and Conditions
+							</Link>
+							<Link to='/privacy' className='nav-link'>
+								Privacy Policy
+							</Link>
 						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>
