@@ -9,11 +9,22 @@
       "UnauthRoleName": "amplify-medtrain-dev-210024-unauthRole",
       "StackName": "amplify-medtrain-dev-210024",
       "StackId": "arn:aws:cloudformation:us-east-2:101779447473:stack/amplify-medtrain-dev-210024/57b3d940-0717-11ed-a819-021a6f5f7574",
-      "AmplifyAppId": "d3rhpwtik25umz"
+      "AmplifyAppId": "d3rhpwtik25umz",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-medtrain-dev-210024-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "medtrain5d2c6186": {}
+      },
+      "function": {
+        "medicaltrain": {
+          "deploymentBucketName": "amplify-medtrain-dev-210024-deployment",
+          "s3Key": "amplify-builds/medicaltrain-51654e64534c4f664838-build.zip"
+        },
+        "medclinicinfo": {
+          "deploymentBucketName": "amplify-medtrain-dev-210024-deployment",
+          "s3Key": "amplify-builds/medclinicinfo-7964755a753452374468-build.zip"
+        }
       }
     }
   }
