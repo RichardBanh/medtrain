@@ -1,3 +1,5 @@
+/* global google */
+
 const distances = (origin, destination_array) => {
 	const service = new google.maps.DistanceMatrixService();
 	const request = {
