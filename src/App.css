@@ -195,11 +195,15 @@
 	cursor: pointer;
 }
 
+.show_password_spec {
+	color: gray;
+}
+
 .show_password_spec:hover {
 	cursor: pointer;
 }
 
 .text_block {
-	color: grey;
+	color: rgb(68, 68, 68);
 	text-align: start;
 }

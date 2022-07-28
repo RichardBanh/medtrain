@@ -112,10 +112,7 @@ const Sign_up = () => {
 				return;
 			}
 			try {
-				
-			} catch (error) {
-				
-			}
+			} catch (error) {}
 		} else {
 			show_error('Passwords do not match');
 			set_processing(false);
@@ -222,43 +219,50 @@ const Sign_up = () => {
 							/>
 							<label for='floatingPassword'>Address</label>
 						</div>
-						{show_password_info ? (
-							<div style={{ maxWidth: '70%' }} className='text_block'>
-								Password requirements: 8 character(s).
-								<br /> Contains at least 1 number. <br />
-								Contains at least 1 special character
-								<br />
-								{special_characters}. <br />
-								Contains at least 1 uppercase letter. <br /> Contains at least 1
-								lowercase letter
-							</div>
-						) : (
-							<></>
-						)}
-						<div className='form-floating' style={{ width: '70%' }}>
-							<input
-								type='password'
-								className='form-control'
-								id='floatingPassword'
-								placeholder='Password'
-								required
-								onChange={(e) => {
-									set_clinic_info({
-										...clinic_info,
-										password: e.target.value,
-									});
-								}}
-							/>
-							<label for='floatingPassword'>Password</label>
-						</div>
+
 						<div
-							onClick={() => {
-								show_message();
-							}}
-							className='show_password_spec'
+							style={{ width: '100%' }}
+							className='d-flex flex-column align-items-center'
 						>
-							What special characters?
+							<div
+								onClick={() => {
+									show_message();
+								}}
+								className='show_password_spec'
+							>
+								Special character Requirements
+							</div>
+							{show_password_info ? (
+								<div style={{ maxWidth: '70%' }} className='text_block'>
+									Password requirements: 8 character(s).
+									<br /> Contains at least 1 number. <br />
+									Contains at least 1 special character
+									<br />
+									{special_characters}. <br />
+									Contains at least 1 uppercase letter. <br /> Contains at least
+									1 lowercase letter
+								</div>
+							) : (
+								<></>
+							)}
+							<div className='form-floating' style={{ width: '70%' }}>
+								<input
+									type='password'
+									className='form-control'
+									id='floatingPassword'
+									placeholder='Password'
+									required
+									onChange={(e) => {
+										set_clinic_info({
+											...clinic_info,
+											password: e.target.value,
+										});
+									}}
+								/>
+								<label for='floatingPassword'>Password</label>
+							</div>
 						</div>
+
 						<div className='form-floating' style={{ width: '70%' }}>
 							<input
 								type='password'
