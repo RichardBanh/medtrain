@@ -4,13 +4,14 @@ import {
 	update_appointment,
 	update_times,
 } from '../Amplify_Account_FUNCTIONS/upload_data';
+import { useState } from 'react';
 
 const Clinic_data_entry = async () => {
 	const [clinic_time_wait, set_clinic_time_wait] = useState('');
 	const [clinic_appointment, set_clinic_appointment] = useState('');
 	const [error_message, set_error_message] = useState('');
-	
-	const clinic_update = () => {
+
+	const clinic_update = async () => {
 		let clinic_wait = clinic_time_wait;
 		let clinic_app = clinic_appointment;
 		if (clinic_wait === '' && clinic_app === '') {
@@ -103,6 +104,5 @@ const Clinic_data_entry = async () => {
 };
 
 export default Clinic_data_entry;
-
 
 //need to update the clinic ui to be able to pick minutes and hours also the appointments avaliable
