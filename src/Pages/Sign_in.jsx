@@ -1,13 +1,20 @@
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
+import { login_amplify } from '../Amplify_Account_FUNCTIONS/login_amplify';
+import { useNavigate } from 'react-router-dom';
 const Sign_in = () => {
 	const [email, set_email] = useState('');
 	const [password, set_password] = useState('');
 
-	const submit_login = () => {
+	const navigate = useNavigate();
+	const submit_login = async () => {
 		let obj_payload = { email, password };
+		const user = await login_amplify(...obj_payload);
+		if (user.success) {
+			navigate('/check');
+		}
 	};
-	
+
 	return (
 		<Container
 			style={{ height: '90vh', width: '90%' }}

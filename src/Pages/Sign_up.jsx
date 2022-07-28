@@ -2,6 +2,7 @@ import { Container, Form, Spinner } from 'react-bootstrap';
 
 import Success_page from '../Components/Success_page';
 import { useState } from 'react';
+import { sign_up_fetch } from '../Amplify_Account_FUNCTIONS/signup_amplify';
 
 const Sign_up = () => {
 	const [submit_success, set_success] = useState(false);
@@ -9,6 +10,9 @@ const Sign_up = () => {
 
 	const [error_message, set_error_message] = useState('');
 
+	const [show_password_info, set_password_info] = useState(false);
+
+	const special_characters = `!@#$%^&*()_+~?><|}{[]\;:",./<>`;
 	const show_error = (message) => {
 		set_error_message(message);
 		setTimeout(() => {
@@ -72,26 +76,52 @@ const Sign_up = () => {
 		clinic_name: '',
 		email_address: '',
 		phone_number: '',
-		city: '',
+		address: '',
 		password: '',
 		password2: '',
+		username: '',
 	});
 
-	const handle_submit = () => {
-		set_processing(true);
-		// //initialize spinner
-
-		// //evaluate empty
-		// //evaluate password
-
-		// check if closed
-		// if closed do not send hours
-		set_success(true);
+	const show_message = () => {
+		set_password_info(true);
+		setTimeout(() => {
+			set_password_info(false);
+		}, 3000);
 	};
 
-	const password_comparison = (password1, password2) => {
-		//must have special characters and 1 number and length of 6
-		//password1 and password 2 must match
+	const handle_submit = async () => {
+		set_processing(true);
+		const password_comp = clinic_info.password === clinic_info.password2;
+		if (password_comp) {
+			const attributes = {
+				family_name: clinic_info.clinic_name,
+				phone_number: clinic_info.phone_number,
+				email: clinic_info.email_address,
+				address: clinic_info.address,
+			};
+
+			try {
+				const user = await sign_up_fetch(
+					clinic_info.username,
+					clinic_info.password,
+					attributes
+				);
+			} catch (error) {
+				show_error(error.message);
+				set_processing(false);
+				return;
+			}
+			try {
+				
+			} catch (error) {
+				
+			}
+		} else {
+			show_error('Passwords do not match');
+			set_processing(false);
+			return;
+		}
+		set_success(true);
 	};
 
 	return (
@@ -117,6 +147,22 @@ const Sign_up = () => {
 								type='text'
 								className='form-control'
 								id='floatingInput'
+								placeholder='Username'
+								onChange={(e) => {
+									set_clinic_info({
+										...clinic_info,
+										username: e.target.value,
+									});
+								}}
+								required
+							/>
+							<label for='floatingInput'>Username</label>
+						</div>
+						<div className='form-floating' style={{ width: '70%' }}>
+							<input
+								type='text'
+								className='form-control'
+								id='floatingInput'
 								placeholder='Clinic Name'
 								onChange={(e) => {
 									set_clinic_info({
@@ -126,7 +172,7 @@ const Sign_up = () => {
 								}}
 								required
 							/>
-							<label for='floatingInput'>Clinic</label>
+							<label for='floatingInput'>Clinic Name</label>
 						</div>
 						<div className='form-floating' style={{ width: '70%' }}>
 							<input
@@ -165,17 +211,30 @@ const Sign_up = () => {
 							<input
 								type='text'
 								className='form-control'
-								placeholder='City'
+								placeholder='Address'
 								required
 								onChange={(e) => {
 									set_clinic_info({
 										...clinic_info,
-										city: e.target.value,
+										address: e.target.value,
 									});
 								}}
 							/>
-							<label for='floatingPassword'>City</label>
+							<label for='floatingPassword'>Address</label>
 						</div>
+						{show_password_info ? (
+							<div style={{ maxWidth: '70%' }} className='text_block'>
+								Password requirements: 8 character(s).
+								<br /> Contains at least 1 number. <br />
+								Contains at least 1 special character
+								<br />
+								{special_characters}. <br />
+								Contains at least 1 uppercase letter. <br /> Contains at least 1
+								lowercase letter
+							</div>
+						) : (
+							<></>
+						)}
 						<div className='form-floating' style={{ width: '70%' }}>
 							<input
 								type='password'
@@ -191,6 +250,14 @@ const Sign_up = () => {
 								}}
 							/>
 							<label for='floatingPassword'>Password</label>
+						</div>
+						<div
+							onClick={() => {
+								show_message();
+							}}
+							className='show_password_spec'
+						>
+							What special characters?
 						</div>
 						<div className='form-floating' style={{ width: '70%' }}>
 							<input

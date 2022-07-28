@@ -19,11 +19,11 @@
       "function": {
         "medicaltrain": {
           "deploymentBucketName": "amplify-medtrain-dev-210024-deployment",
-          "s3Key": "amplify-builds/medicaltrain-51654e64534c4f664838-build.zip"
+          "s3Key": "amplify-builds/medicaltrain-704c525153414945526e-build.zip"
         },
         "medclinicinfo": {
           "deploymentBucketName": "amplify-medtrain-dev-210024-deployment",
-          "s3Key": "amplify-builds/medclinicinfo-7964755a753452374468-build.zip"
+          "s3Key": "amplify-builds/medclinicinfo-656c315767796654497a-build.zip"
         }
       }
     }

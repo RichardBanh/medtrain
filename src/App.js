@@ -16,6 +16,8 @@ import Settings from './Pages/Settings';
 import Change_password from './Pages/Change_password';
 import Delete_account from './Pages/Delete_account';
 
+import Check_active from './Pages/Check_active';
+
 const App = () => {
 	return (
 		<div className='App'>
@@ -31,6 +33,7 @@ const App = () => {
 						<Route path='settings' element={<Settings />} />
 						<Route path='password' element={<Change_password />} />
 						<Route path='delete' element={<Delete_account />} />
+						<Route path='check' element={<Check_active />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>
