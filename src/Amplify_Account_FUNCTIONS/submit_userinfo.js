@@ -6,12 +6,10 @@ export const submit_user_info = async (data_obj) => {
 	const myinit = {
 		body: {
 			type: 'hours',
-			...data_obj,
+			hours: data_obj,
 		},
 	};
 	return await API.post(api_name, path, myinit);
 };
-
-
 
 //medclinic info requires to be signed in

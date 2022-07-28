@@ -2,17 +2,25 @@ import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { login_amplify } from '../Amplify_Account_FUNCTIONS/login_amplify';
 import { useNavigate } from 'react-router-dom';
+import Spinner from 'react-bootstrap/spinner';
 const Sign_in = () => {
 	const [email, set_email] = useState('');
 	const [password, set_password] = useState('');
+	const [error_message, set_error_message] = useState('');
+
+	const [loading, set_loading] = useState(false);
 
 	const navigate = useNavigate();
 	const submit_login = async () => {
+		set_loading(true);
 		let obj_payload = { email, password };
 		const user = await login_amplify(...obj_payload);
 		if (user.success) {
 			navigate('/check');
+		} else if (user.success === false) {
+			set_error_message(user.error.error_message);
 		}
+		set_loading(false);
 	};
 
 	return (
@@ -62,13 +70,16 @@ const Sign_in = () => {
 						/>
 						<label for='floatingPassword'>Password</label>
 					</div>
-
+					<div>{error_message}</div>
 					<button
 						className='btn btn-lg btn-primary'
 						type='submit'
 						style={{ width: '40%', minWidth: '250px' }}
+						onClick={() => {
+							submit_login();
+						}}
 					>
-						Sign in
+						{loading ? <Spinner animation='border' /> : 'Sign in'}
 					</button>
 				</form>
 			</main>
