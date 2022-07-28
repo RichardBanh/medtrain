@@ -3,6 +3,8 @@ import Icon from '../Asset/search.svg';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
+
 const Search = () => {
 	const [city, set_city] = useState('1');
 	

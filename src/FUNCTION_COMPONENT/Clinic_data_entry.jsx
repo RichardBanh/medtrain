@@ -9,10 +9,10 @@ const Clinic_data_entry = async () => {
 	const [clinic_time_wait, set_clinic_time_wait] = useState('');
 	const [clinic_appointment, set_clinic_appointment] = useState('');
 	const [error_message, set_error_message] = useState('');
+	
 	const clinic_update = () => {
 		let clinic_wait = clinic_time_wait;
 		let clinic_app = clinic_appointment;
-
 		if (clinic_wait === '' && clinic_app === '') {
 			set_error_message('Please enter a time and or appointment');
 			return;
@@ -103,3 +103,6 @@ const Clinic_data_entry = async () => {
 };
 
 export default Clinic_data_entry;
+
+
+//need to update the clinic ui to be able to pick minutes and hours also the appointments avaliable
