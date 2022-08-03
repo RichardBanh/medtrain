@@ -6,12 +6,15 @@ import { useLocation } from 'react-router-dom';
 
 import { request_clinic_list } from '../Amplify_Account_FUNCTIONS/request_clinic_list';
 import distances from '../GOOGLE_DISTANCE_FUNC/distance';
+
 const Search = () => {
 	const [city, set_city] = useState('1');
 
+	const [clinic_list_load, set_clinic_list] = useState({
+		list: [],
+		loaded: false,
+	});
 	const [client_location, set_client_location] = useState('');
-
-	const [city_list, set_city_list] = useState([]);
 
 	const city_select = (e) => {
 		set_city(e.target.value);
@@ -21,48 +24,39 @@ const Search = () => {
 		set_client_location(e.target.value);
 	};
 
-	const search_clients_sort = async () => {
-		// let city_id;
-		// if (city === '1') {
-		// 	// need to add error
-		// 	return;
-		// } else if (city === '2') {
-		// 	city_id = 'vancouver';
-		// } else if (city === '3') {
-		// 	city_id = 'montreal';
-		// } else if (city === '4') {
-		// 	city_id = 'toronto';
-		// } else if (city === '5') {
-		// 	city_id = 'seattle';
-		// }
-		// let clinic_list;
-		// try {
-		// 	clinic_list = await request_clinic_list(city_id);
-		// } catch (error) {
-		// 	console.log(error);
-		// }
-		//find list
-		//compare distance
-		// try {
-		// 	let distance_list = [];
-		// 	for (let i = 0; i < clinic_list.length; i++) {
-		// 		let distance = await distances(
-		// 			client_location,
-		// 			clinic_list[i].location
-		// 		);
-		// 		distance_list.push(distance);
-		// 	}
-		// 	let sorted_list = [];
-		// 	for (let i = 0; i < distance_list.length; i++) {
-		// 		let min = Math.min(...distance_list);
-		// 		let index = distance_list.indexOf(min);
-		// 		sorted_list.push(clinic_list[index]);
-		// 		distance_list[index] = Infinity;
-		// 	}
-		// 	set_city_list(sorted_list);
-		// } catch (error) {
-		// 	console.log(error)
-		// }
+	const load_clinic_list = async () => {
+		let city_id;
+		if (city === '1') {
+			// need to add error
+			return;
+		} else if (city === '2') {
+			city_id = 'vancouver';
+		} else if (city === '3') {
+			city_id = 'montreal';
+		} else if (city === '4') {
+			city_id = 'toronto';
+		} else if (city === '5') {
+			city_id = 'seattle';
+		}
+		let clinic_list;
+		try {
+			clinic_list = await request_clinic_list(city_id);
+		} catch (error) {
+			console.log(error);
+		}
+
+		set_clinic_list({
+			list: [...clinic_list.response._resultList],
+			loaded: true,
+		});
+	};
+
+	const sort_list = () => {
+		//find distances?
+		let origin = 'client_location';
+
+		//need to filter out the distances..
+		let destination_list = [];
 	};
 
 	return (
