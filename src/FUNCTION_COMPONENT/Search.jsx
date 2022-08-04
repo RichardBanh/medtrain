@@ -2,7 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Icon from '../Asset/search.svg';
 import { Button, Dropdown, Form } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { request_clinic_list } from '../Amplify_Account_FUNCTIONS/request_clinic_list';
 import distances from '../GOOGLE_DISTANCE_FUNC/distance';
@@ -51,12 +50,15 @@ const Search = () => {
 		});
 	};
 
-	const sort_list = () => {
+	const sort_list = async () => {
 		//find distances?
-		let origin = 'client_location';
-
-		//need to filter out the distances..
-		let destination_list = [];
+		let origin = client_location;
+		let address = [];
+		clinic_list_load.list.forEach((clinic) => {
+			address = [...address, clinic.address];
+		});
+		let clinicinfo = await distances(origin, address);
+		console.log(clinicinfo);
 	};
 
 	return (
@@ -122,21 +124,5 @@ const Search = () => {
 		</Container>
 	);
 };
-
-{
-	/* <form id="search" role="search" action="/search" className="s-topbar--searchbar js-searchbar " autocomplete="off">
-                    <div className="s-topbar--searchbar--input-group">
-                        <input name="q" type="text" placeholder="Search…" value="" autocomplete="off" maxlength="240" className="s-input s-input__search js-search-field " aria-label="Search" aria-controls="top-search" data-controller="s-popover" data-action="focus->s-popover#show" data-s-popover-placement="bottom-start" aria-expanded="true">
-                        <svg aria-hidden="true" className="s-input-icon s-input-icon__search svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="m18 16.5-5.14-5.18h-.35a7 7 0 1 0-1.19 1.19v.35L16.5 18l1.5-1.5ZM12 7A5 5 0 1 1 2 7a5 5 0 0 1 10 0Z"></path></svg>
-                        
-                    </div>
-            </form> */
-}
-{
-	/* <div style='border: 1px solid #DDD;'>
-	<img src='icon.png' />
-	<input style='border: none;' />
-</div>; */
-}
 
 export default Search;

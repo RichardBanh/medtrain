@@ -125,6 +125,7 @@ const Sign_up = () => {
 
 	const add_hours = async () => {
 		try {
+			//need to add address to this
 			let data = await submit_user_info(date_time);
 		} catch (error) {
 			show_error(error.message);

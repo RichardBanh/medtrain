@@ -1,14 +1,12 @@
 /* global google */
 
-const distances = (origin, destination_array) => {
+const distances = async (origin, destination_array) => {
 	const service = new google.maps.DistanceMatrixService();
 	const request = {
 		origins: [origin],
 		destinations: [...destination_array],
 	};
-	service.getDistanceMatrix(request).then((response) => {
-		return response;
-	});
+	await service.getDistanceMatrix(request).promise();
 };
 
 export default distances;
